@@ -1,6 +1,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover" />
 <meta name="format-detection" content="telephone=no" />
+<link rel="icon" type="image/png" href="Untitled_img/logo.png" />
 <style>
     html, body {
         margin: 0;
@@ -125,6 +126,64 @@
     .privacy-accept {
         background: #0A1D37;
         color: white;
+    }
+    .contact-phone-control {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+    .contact-phone-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 90px;
+        height: 90px;
+        flex: 0 0 90px;
+        padding: 0;
+        border: 0;
+        border-radius: 50%;
+        background: #f4f6f9;
+        box-shadow: 0 12px 28px rgba(10,29,55,0.08);
+        cursor: pointer;
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .contact-phone-toggle:hover,
+    .contact-phone-toggle:focus-visible {
+        transform: translateY(-6px) scale(1.05);
+        box-shadow: 0 18px 34px rgba(10,29,55,0.16);
+    }
+    .contact-phone-toggle:focus-visible {
+        outline: 3px solid #2b79b9;
+        outline-offset: 4px;
+    }
+    .contact-phone-toggle svg {
+        width: 42px;
+        height: 42px;
+        fill: #0A1D37;
+    }
+    .contact-phone-numbers {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+    .contact-phone-numbers[hidden] {
+        display: none;
+    }
+    .contact-phone-numbers a {
+        padding: 10px 14px;
+        border: 1px solid #dce3ec;
+        border-radius: 6px;
+        background: white;
+        color: #0A1D37;
+        font: 700 15px Manrope, Arial, sans-serif;
+        text-decoration: none;
+    }
+    .contact-phone-numbers a:hover,
+    .contact-phone-numbers a:focus-visible {
+        border-color: #0A1D37;
+        background: #f4f6f9;
     }
     .privacy-dialog button:focus-visible,
     .privacy-link:focus-visible {
@@ -367,6 +426,37 @@
             aspect-ratio: 1 / 1 !important;
             padding: 0 !important;
             border-radius: 50% !important;
+        }
+
+        .site-shell .contact-icons .contact-phone-control {
+            width: auto !important;
+            max-width: 100% !important;
+            align-items: center !important;
+        }
+
+        .site-shell .contact-icons .contact-phone-toggle {
+            display: inline-flex !important;
+            flex: 0 0 90px !important;
+            flex-direction: row !important;
+            width: 90px !important;
+            min-width: 90px !important;
+            max-width: 90px !important;
+            height: 90px !important;
+            min-height: 90px !important;
+            max-height: 90px !important;
+            aspect-ratio: 1 / 1 !important;
+            border-radius: 50% !important;
+        }
+
+        .site-shell .contact-icons .contact-phone-numbers {
+            display: flex !important;
+            flex-direction: column !important;
+            width: auto !important;
+            max-width: 100% !important;
+        }
+
+        .site-shell .contact-icons .contact-phone-numbers[hidden] {
+            display: none !important;
         }
 
         .privacy-overlay {
@@ -720,7 +810,7 @@
       <h2 style="margin: 0 0 28px; font-size: clamp(30px, 3vw, 42px); color: #0a1d37; font-family: Manrope; font-weight: 700; line-height: 1.2; letter-spacing: -0.04em;">Contactez-nous</h2>
 
       <div class="contact-icons" style="display:flex; justify-content:center; gap:40px; margin-top:28px; flex-wrap:wrap;">
-        <a href="mailto:contact@fresen-trans.tg" aria-label="Envoyer un email" class="lift-on-hover pulse-soft" style="display:inline-flex; align-items:center; justify-content:center; width:90px; height:90px; background:#f4f6f9; border-radius:50%; text-decoration:none; transition:transform 0.25s ease, box-shadow 0.25s ease; box-shadow:0 12px 28px rgba(10,29,55,0.08);">
+        <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=fresentrans%40gmail.com" target="_blank" rel="noopener noreferrer" aria-label="Écrire à FRESEN-TRANS dans Gmail" class="lift-on-hover pulse-soft" style="display:inline-flex; align-items:center; justify-content:center; width:90px; height:90px; background:#f4f6f9; border-radius:50%; text-decoration:none; transition:transform 0.25s ease, box-shadow 0.25s ease; box-shadow:0 12px 28px rgba(10,29,55,0.08);">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="52 42 88 66" role="img" aria-label="Gmail" style="width:52px; height:52px; display:block;">
             <path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
             <path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>
@@ -730,11 +820,18 @@
           </svg>
         </a>
 
-        <a href="https://wa.me/22890000000" target="_blank" rel="noopener" aria-label="Écrire sur WhatsApp" class="lift-on-hover pulse-soft" style="display:inline-flex; align-items:center; justify-content:center; width:90px; height:90px; background:#f4f6f9; border-radius:50%; text-decoration:none; transition:transform 0.25s ease, box-shadow 0.25s ease; box-shadow:0 12px 28px rgba(10,29,55,0.08);">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="WhatsApp" style="width:52px; height:52px; display:block;">
-            <path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-          </svg>
-        </a>
+                <div class="contact-phone-control">
+                    <button class="contact-phone-toggle" type="button" aria-label="Afficher les numéros de téléphone" aria-expanded="false" aria-controls="contact-phone-numbers">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="Téléphone">
+                            <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.02-.24c1.12.37 2.33.56 3.57.56a1 1 0 011 1V20a1 1 0 01-1 1C10.61 21 3 13.39 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.56 3.57a1 1 0 01-.25 1.02l-2.19 2.2z" />
+                        </svg>
+                    </button>
+                    <div class="contact-phone-numbers" id="contact-phone-numbers" hidden aria-label="Numéros de téléphone de FRESEN-TRANS">
+                        <a href="tel:+22890286319">+228 90 28 63 19</a>
+                        <a href="tel:+22898119575">+228 98 11 95 75</a>
+                    </div>
+                </div>
+
       </div>
     </section>
     <div class="reveal-up delay-1" style="width: 100%; max-width: 1440px; margin: 0 auto; padding: 80px 80px 40px; background: #0A1D37; box-sizing: border-box; display: flex; flex-direction: column; gap: 48px;">
@@ -780,25 +877,25 @@
                 <p id="privacy-intro"><strong>À lire avant de nous contacter ou de laisser un avis.</strong> Cette politique explique quelles informations peuvent être communiquées à STE FRESEN-TRANS, pourquoi elles sont utilisées, à qui elles sont transmises et les choix dont vous disposez. Elle ne signifie pas que ce site enregistre déjà les messages sur un serveur.</p>
 
                 <h3>1. Responsable et contact</h3>
-                <p>Le site présente les services de STE FRESEN-TRANS. Pour toute question concernant vos informations ou pour exercer une demande relative à celles-ci, écrivez à <a href="mailto:contact@fresen-trans.tg">contact@fresen-trans.tg</a> en indiquant « Confidentialité » dans l’objet. N’envoyez pas de pièce d’identité ou de donnée sensible, sauf si cela vous est demandé par un canal approprié.</p>
+                <p>Le site présente les services de STE FRESEN-TRANS. Pour toute question concernant vos informations ou pour exercer une demande relative à celles-ci, écrivez à <a href="https://mail.google.com/mail/?view=cm&amp;fs=1&amp;to=fresentrans%40gmail.com" target="_blank" rel="noopener noreferrer">fresentrans@gmail.com</a> en indiquant « Confidentialité » dans l’objet. N’envoyez pas de pièce d’identité ou de donnée sensible, sauf si cela vous est demandé par un canal approprié.</p>
 
                 <h3>2. Informations concernées</h3>
                 <p>Lorsque vous préparez un message ou un avis, les informations que vous choisissez de fournir peuvent comprendre votre nom ou raison sociale, votre adresse e-mail, l’objet de votre demande et le contenu de votre message ou avis. Le contenu peut révéler d’autres informations que vous décidez d’y inclure. Limitez-vous aux éléments utiles à votre demande et évitez les données sensibles, les mots de passe, les données bancaires et les informations concernant d’autres personnes.</p>
-                <p>Si vous choisissez l’icône e-mail ou WhatsApp, votre interaction avec le service correspondant peut également entraîner le traitement de données par votre fournisseur de messagerie ou par WhatsApp/Meta, selon ses propres conditions et réglages.</p>
+                <p>Si vous choisissez l’icône e-mail, vous ouvrez Gmail. Google peut traiter les données conformément à ses propres conditions et réglages.</p>
 
                 <h3>3. Fonctionnement actuel de ce site</h3>
-                <p>À la date de cette version, le site est une page statique. Il ne comporte pas de base de données, de compte utilisateur, ni de service serveur configuré pour recevoir ou enregistrer les réponses du formulaire. Le formulaire ouvre une nouvelle composition d’e-mail dans l’application de messagerie de votre appareil; rien n’est transmis à STE FRESEN-TRANS tant que vous n’avez pas vous-même envoyé cet e-mail. Le site ne peut pas garantir que votre application est configurée ni que le message sera remis.</p>
+                <p>À la date de cette version, le site est une page statique. Il ne comporte pas de base de données, de compte utilisateur, ni de service serveur configuré pour recevoir ou enregistrer les réponses du formulaire. Le formulaire ouvre une composition dans Gmail avec les informations saisies; rien n’est transmis à STE FRESEN-TRANS tant que vous n’êtes pas connecté à Google et que vous n’avez pas vous-même envoyé cet e-mail. Le site ne peut pas garantir que votre compte Gmail est accessible ni que le message sera remis.</p>
                 <p>Le choix d’accepter la présente politique est mémorisé uniquement dans le stockage de session de votre navigateur, pour permettre les actions de contact pendant cette session. Le contenu de vos champs n’est pas conservé par la page. Si un système de réception, de suivi ou de stockage est ajouté ultérieurement, cette politique devra être mise à jour avant son activation pour décrire précisément ce traitement.</p>
 
                 <h3>4. Finalités</h3>
                 <p>Les informations que vous adressez peuvent être utilisées pour comprendre et traiter une demande de renseignements ou de devis, vous répondre, assurer le suivi d’un échange, examiner un avis ou résoudre une difficulté liée à un service. Elles ne sont pas destinées à être utilisées pour vous envoyer des offres commerciales non sollicitées. Une utilisation nouvelle nécessiterait une information préalable et, lorsque la réglementation l’exige, votre accord.</p>
 
                 <h3>5. Accord et choix</h3>
-                <p>Avant de lancer un contact par e-mail, WhatsApp ou le formulaire, la page vous demande d’accepter cette politique. Le bouton « Passer » ferme la fenêtre sans enregistrer votre accord et sans effectuer l’action en attente. Si vous tentez ensuite de contacter l’entreprise ou de soumettre un avis, la fenêtre s’affiche à nouveau. L’acceptation permet uniquement de poursuivre l’action que vous avez demandée; elle ne vaut pas inscription à une liste marketing.</p>
+                <p>Avant de lancer un contact par e-mail ou d’utiliser le formulaire, la page vous demande d’accepter cette politique. Le bouton « Passer » ferme la fenêtre sans enregistrer votre accord et sans effectuer l’action en attente. Si vous tentez ensuite de contacter l’entreprise ou de soumettre un avis, la fenêtre s’affiche à nouveau. L’acceptation permet uniquement de poursuivre l’action que vous avez demandée; elle ne vaut pas inscription à une liste marketing.</p>
                 <p>Après ouverture de votre application de messagerie, vous restez libre de modifier ou d’abandonner le brouillon. Vous pouvez retirer une demande ou demander l’effacement d’un message déjà envoyé en écrivant à l’adresse de contact, sous réserve des obligations qui pourraient imposer sa conservation.</p>
 
                 <h3>6. Destinataires et services tiers</h3>
-                <p>Un e-mail que vous envoyez est destiné à STE FRESEN-TRANS à l’adresse indiquée et transite par les fournisseurs de messagerie nécessaires à son acheminement. Si vous choisissez WhatsApp, vous quittez ce site et communiquez avec le service WhatsApp; Meta et les opérateurs techniques concernés peuvent traiter des données conformément à leurs propres politiques. STE FRESEN-TRANS ne contrôle ni les pratiques, ni la sécurité, ni la durée de conservation de ces fournisseurs.</p>
+                <p>Un e-mail que vous envoyez est destiné à STE FRESEN-TRANS à l’adresse indiquée et transite par Google/Gmail et les fournisseurs nécessaires à son acheminement. Si vous choisissez d’utiliser un service tiers en dehors de ce site, son fournisseur peut traiter des données selon ses propres politiques. STE FRESEN-TRANS ne contrôle ni les pratiques, ni la sécurité, ni la durée de conservation de ces fournisseurs.</p>
                 <p>Le site charge également certaines images depuis des domaines externes. Lors du chargement, le fournisseur concerné peut recevoir des informations techniques de connexion, telles que l’adresse IP, le navigateur et l’heure de la requête. Consultez les politiques de ces fournisseurs pour connaître leurs pratiques. Aucun outil d’analyse d’audience ou de publicité n’est configuré dans cette page à la date indiquée.</p>
 
                 <h3>7. Conservation</h3>
@@ -854,6 +951,8 @@
     const privacyPass = document.querySelector('#privacy-pass');
     const privacyPolicyLink = document.querySelector('#privacy-policy-link');
     const contactForm = document.querySelector('#contact-form');
+    const phoneToggle = document.querySelector('.contact-phone-toggle');
+    const phoneNumbers = document.querySelector('#contact-phone-numbers');
     const privacyConsentKey = 'fresen-trans-privacy-consent-v1';
     let privacyConsentGranted = false;
     let pendingPrivacyAction = null;
@@ -923,12 +1022,33 @@
         }
     });
 
-    document.querySelectorAll('.contact-icons a').forEach((link) => {
+    const buildGmailComposeUrl = (subject = '', body = '') => {
+        const url = new URL('https://mail.google.com/mail/');
+        url.searchParams.set('view', 'cm');
+        url.searchParams.set('fs', '1');
+        url.searchParams.set('to', 'fresentrans@gmail.com');
+        if (subject) url.searchParams.set('su', subject);
+        if (body) url.searchParams.set('body', body);
+        return url.toString();
+    };
+
+    document.querySelectorAll('a[href^="https://mail.google.com/mail/"]').forEach((link) => {
         link.addEventListener('click', (event) => {
             if (hasPrivacyConsent()) return;
             event.preventDefault();
             openPrivacyModal(() => link.click());
         });
+    });
+
+    phoneToggle.addEventListener('click', () => {
+        if (!hasPrivacyConsent()) {
+            openPrivacyModal(() => phoneToggle.click());
+            return;
+        }
+        const isExpanded = phoneToggle.getAttribute('aria-expanded') === 'true';
+        phoneToggle.setAttribute('aria-expanded', String(!isExpanded));
+        phoneToggle.setAttribute('aria-label', isExpanded ? 'Afficher les numéros de téléphone' : 'Masquer les numéros de téléphone');
+        phoneNumbers.hidden = isExpanded;
     });
 
     contactForm.addEventListener('submit', (event) => {
@@ -946,7 +1066,7 @@
             '',
             String(formData.get('message'))
         ].join('\n');
-        window.location.href = `mailto:contact@fresen-trans.tg?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.open(buildGmailComposeUrl(subject, body), '_blank', 'noopener,noreferrer');
     });
 
     const motionTargets = [
